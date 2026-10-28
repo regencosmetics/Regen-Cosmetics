@@ -1,0 +1,10 @@
+process.env.NODE_ENV = 'test';
+process.env.MONGODB_URI ||= 'mongodb://127.0.0.1:27017/regen_test';
+process.env.JWT_SECRET = 'test-secret-test-secret-test-secret';
+process.env.COOKIE_SECRET = 'test-cookie-secret-test-cookie-secret';
+process.env.RAZORPAY_KEY_ID = 'rzp_test_dummykey';
+process.env.RAZORPAY_KEY_SECRET = 'dummy_secret_for_tests';
+process.env.RAZORPAY_WEBHOOK_SECRET = 'dummy_webhook_secret';
+process.env.CLOUDINARY_CLOUD_NAME = 'test'; process.env.CLOUDINARY_API_KEY = '1'; process.env.CLOUDINARY_API_SECRET = 'x';
+process.env.RESEND_API_KEY = ''; process.env.RATE_LIMIT_DISABLED = 'true'; process.env.CLIENT_URL = 'http://localhost:5173';
+process.env.SHIPPING_CONFIGURATION = '{"freeShippingThreshold":999,"flatRate":49,"codFee":0}';

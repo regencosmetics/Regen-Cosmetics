@@ -1,0 +1,17 @@
+{
+  "name": "regen-cosmetics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "REGEN Cosmetics - MERN e-commerce platform (storefront, admin, payments, returns, refunds)",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n api,web -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "lint": "npm --prefix server run lint && npm --prefix client run lint",
+    "test": "npm --prefix server test && npm --prefix client test",
+    "seed:admin": "npm --prefix server run seed:admin",
+    "seed:catalog": "npm --prefix server run seed:catalog"
+  },
+  "devDependencies": { "concurrently": "^10.0.6" }
+}

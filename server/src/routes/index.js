@@ -1,0 +1,25 @@
+import { Router } from 'express';
+import auth from './auth.routes.js';
+import account from './account.routes.js';
+import { products, categories, collections } from './catalog.routes.js';
+import cart from './cart.routes.js';
+import { checkout, payments } from './checkout.routes.js';
+import orders from './order.routes.js';
+import returns from './return.routes.js';
+import pub from './public.routes.js';
+import admin from './admin.routes.js';
+
+const r = Router();
+r.use('/auth', auth);
+r.use('/account', account);
+r.use('/products', products);
+r.use('/categories', categories);
+r.use('/collections', collections);
+r.use('/cart', cart);
+r.use('/checkout', checkout);
+r.use('/payments', payments);
+r.use('/orders', orders);
+r.use('/returns', returns);
+r.use('/admin', admin);
+r.use('/', pub);
+export default r;
