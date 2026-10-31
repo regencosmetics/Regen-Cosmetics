@@ -211,22 +211,15 @@ export const coupons = {
     if (!c) throw notFound("Coupon");
     ok(res, { item: c }, "Coupon updated");
   }),
-  remove: asyncHandler(async (req, res) => {
-    const c = await Coupon.findById(oid(req.params.id));
-    if (!c) throw notFound("Coupon");
-    if (c.usedCount > 0) {
-      c.isActive = false;
-      await c.save();
-      return ok(
-        res,
-        { archived: true },
-        "Coupon has been used, so it was deactivated instead of deleted",
-      );
-    }
-    await c.deleteOne();
-    ok(res, {}, "Coupon deleted");
-  }),
-};
+
+remove: asyncHandler(async (req, res) => {
+  const c = await Coupon.findByIdAndDelete(oid(req.params.id));
+
+  if (!c) throw notFound("Coupon");
+
+  ok(res, { deleted: true }, "Coupon deleted successfully");
+}),
+
 
 // ---------- banners ----------
 export const banners = {
