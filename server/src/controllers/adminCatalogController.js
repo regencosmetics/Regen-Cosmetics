@@ -212,14 +212,14 @@ export const coupons = {
     ok(res, { item: c }, "Coupon updated");
   }),
 
-remove: asyncHandler(async (req, res) => {
-  const c = await Coupon.findByIdAndDelete(oid(req.params.id));
+  remove: asyncHandler(async (req, res) => {
+    const c = await Coupon.findByIdAndDelete(oid(req.params.id));
 
-  if (!c) throw notFound("Coupon");
+    if (!c) throw notFound("Coupon");
 
-  ok(res, { deleted: true }, "Coupon deleted successfully");
-}),
-
+    ok(res, { deleted: true }, "Coupon deleted successfully");
+  }),
+};
 
 // ---------- banners ----------
 export const banners = {
